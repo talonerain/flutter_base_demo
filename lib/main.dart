@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_demo/less_group_page.dart';
 import 'package:flutter_base_demo/plugin_use.dart';
+import 'package:flutter_base_demo/stateful_group_page.dart';
 
 void main() {
-  runApp(LessGroupPage());
+  runApp(StateFulGroup());
 }
 
 class MyApp extends StatelessWidget {

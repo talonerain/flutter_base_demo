@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
-void main() {
-  runApp(LessGroupPage());
-}
-
+///StatelessWidget与基础组件
 class LessGroupPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
