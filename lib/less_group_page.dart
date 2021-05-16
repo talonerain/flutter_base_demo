@@ -9,6 +9,7 @@ class LessGroupPage extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    TextStyle textStyle = TextStyle(fontSize: 20);
     return MaterialApp(
       title: 'StatelessWidget与基础组件',
       theme: ThemeData(
@@ -21,7 +22,43 @@ class LessGroupPage extends StatelessWidget {
           alignment: Alignment.center,
           child: Column(
             children: <Widget>[
-              Text('I am text'),
+              Text(
+                'I am text',
+                style: textStyle,
+              ),
+              Icon(
+                Icons.android,
+                size: 50,
+                color: Colors.red,
+              ),
+              CloseButton(),
+              BackButton(),
+              Chip(
+                label: Text('StatelessWidget与基础组件'),
+                avatar: Icon(Icons.people),
+              ),
+              Divider(
+                height: 10,
+                color: Colors.orange,
+                indent: 10,
+              ),
+              Card(
+                //带有圆角，阴影，边框等效果的卡片
+                color: Colors.blue,
+                elevation: 5,
+                margin: EdgeInsets.all(10),
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    'I am card',
+                    style: textStyle,
+                  ),
+                ),
+              ),
+              AlertDialog(
+                title: Text('盘他'),
+                content: Text('你这个糟老头坏的很'),
+              )
             ],
           ),
         ),
