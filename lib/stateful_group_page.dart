@@ -104,7 +104,7 @@ class _StateFulGroupState extends State<StateFulGroup> {
                             content: Text('你这个糟老头坏的很'),
                           ),
                           Image.network(
-                            'http://www.devio.org/img/avatar.png',
+                            'https://www.devio.org/img/avatar.png',
                             width: 100,
                             height: 100,
                           )
