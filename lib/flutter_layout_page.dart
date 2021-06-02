@@ -153,13 +153,35 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
                                   ))
                             ],
                           ),
+                          Wrap(
+                            // 创建一个Wrap布局，从左到右进行排列，会自动换行
+                            spacing: 8,
+                            runSpacing: 6,
+                            children: <Widget>[
+                              _chip('Flutter'),
+                              _chip('进阶'),
+                              _chip('实战'),
+                              _chip('携程'),
+                              _chip('App'),
+                            ],
+                          ),
                         ],
                       ),
                     )
                   ],
                 ),
                 onRefresh: _handleRefresh)
-            : Text('列表'),
+            : Column(
+                children: <Widget>[
+                  Text('列表'),
+                  // Expanded：控制容器在父容器中所能撑的大小
+                  Expanded(
+                      child: Container(
+                    decoration: BoxDecoration(color: Colors.red.shade900),
+                    child: Text('拉伸填满高度'),
+                  ))
+                ],
+              ),
       ),
     );
   }
@@ -177,6 +199,19 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
       child: Text(
         title,
         style: TextStyle(fontSize: 22, color: Colors.white),
+      ),
+    );
+  }
+
+  _chip(String label) {
+    return Chip(
+      label: Text(label),
+      avatar: CircleAvatar(
+        backgroundColor: Colors.blue.shade900,
+        child: Text(
+          label.substring(1),
+          style: TextStyle(fontSize: 10),
+        ),
       ),
     );
   }
