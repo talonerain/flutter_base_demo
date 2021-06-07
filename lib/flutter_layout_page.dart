@@ -22,7 +22,17 @@ class _FlutterLayoutPageState extends State<FlutterLayoutPage> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text("如何进行Flutter布局开发？")),
+        appBar: AppBar(
+          title: Text("如何进行Flutter布局开发？"),
+          // 手势监听器
+          leading: GestureDetector(
+            onTap: () {
+              // 跳进页面是push，跳出就是pop
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back),
+          ),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) {
