@@ -44,7 +44,8 @@ class _GesturePageState extends State<GesturePage> {
                       ),
                     ),
                   ),
-                  // Text的文案跟随printString的值自动改变
+                  // Text的文案不是跟随printString的值自动改变，而是调用setState之后重新调用
+                  // 了build方法
                   Text(printString)
                 ],
               ),
