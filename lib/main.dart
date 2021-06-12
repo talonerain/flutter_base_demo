@@ -11,7 +11,61 @@ import 'package:flutter_base_demo/stateful_group_page.dart';
 import 'launch_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(DynamicTheme());
+}
+
+class DynamicTheme extends StatefulWidget {
+  const DynamicTheme({Key key}) : super(key: key);
+
+  @override
+  _DynamicThemeState createState() => _DynamicThemeState();
+}
+
+class _DynamicThemeState extends State<DynamicTheme> {
+  Brightness _brightness = Brightness.light;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        brightness: _brightness,
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('如何创建和使用Flutter的路由与导航？'),
+        ),
+        body: Column(
+          children: [
+            RaisedButton(
+                onPressed: () {
+                  setState(() {
+                    if (_brightness == Brightness.dark) {
+                      _brightness = Brightness.light;
+                    } else if (_brightness == Brightness.light) {
+                      _brightness = Brightness.dark;
+                    }
+                  });
+                },
+                child: Text('切换主题')),
+            RouterNavigator()
+          ],
+        ),
+      ),
+      routes: <String, WidgetBuilder>{
+        'plugin': (BuildContext context) => PluginUse(),
+        'less': (BuildContext context) => LessGroupPage(),
+        'ful': (BuildContext context) => StateFulGroup(),
+        'layout': (BuildContext context) => FlutterLayoutPage(),
+        'gesture': (BuildContext context) => LaunchPage(),
+        'res': (BuildContext context) => ResPage(),
+        'launch': (BuildContext context) => LaunchPage(),
+        'widgetLifecycle': (BuildContext context) => WidgetLifecycle(),
+        'appLifecycle': (BuildContext context) => AppLifecycle(),
+      },
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
