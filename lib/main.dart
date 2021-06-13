@@ -29,6 +29,8 @@ class _DynamicThemeState extends State<DynamicTheme> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        // 全局设置字体
+        // fontFamily: 'ViaodaLibre',
         brightness: _brightness,
         primarySwatch: Colors.blue,
       ),
@@ -39,16 +41,21 @@ class _DynamicThemeState extends State<DynamicTheme> {
         body: Column(
           children: [
             RaisedButton(
-                onPressed: () {
-                  setState(() {
-                    if (_brightness == Brightness.dark) {
-                      _brightness = Brightness.light;
-                    } else if (_brightness == Brightness.light) {
-                      _brightness = Brightness.dark;
-                    }
-                  });
-                },
-                child: Text('切换主题')),
+              onPressed: () {
+                setState(() {
+                  if (_brightness == Brightness.dark) {
+                    _brightness = Brightness.light;
+                  } else if (_brightness == Brightness.light) {
+                    _brightness = Brightness.dark;
+                  }
+                });
+              },
+              child: Text(
+                '切换主题abc',
+                // 针对Text单独设置字体
+                style: TextStyle(fontFamily: 'ViaodaLibre'),
+              ),
+            ),
             RouterNavigator()
           ],
         ),

@@ -46,7 +46,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-    # To add assets to your application, add an assets section, like this:
+  # To add assets to your application, add an assets section, like this:
   assets:
     - images/avatar.png
   #   - images/a_dot_ham.jpeg
@@ -76,3 +76,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: ViaodaLibre
+      fonts:
+        - asset: fonts/ViaodaLibre-Regular.ttf
