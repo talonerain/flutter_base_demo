@@ -4,6 +4,7 @@ import 'package:flutter_base_demo/flutter_layout_page.dart';
 import 'package:flutter_base_demo/flutter_widget_lifecycle.dart';
 import 'package:flutter_base_demo/gesture_page_dart.dart';
 import 'package:flutter_base_demo/less_group_page.dart';
+import 'package:flutter_base_demo/photo_app_page.dart';
 import 'package:flutter_base_demo/plugin_use.dart';
 import 'package:flutter_base_demo/res_page.dart';
 import 'package:flutter_base_demo/stateful_group_page.dart';
@@ -70,6 +71,7 @@ class _DynamicThemeState extends State<DynamicTheme> {
         'launch': (BuildContext context) => LaunchPage(),
         'widgetLifecycle': (BuildContext context) => WidgetLifecycle(),
         'appLifecycle': (BuildContext context) => AppLifecycle(),
+        'photo': (BuildContext context) => PhotoApp(),
       },
     );
   }
@@ -136,6 +138,7 @@ class _RouterNavigatorState extends State<RouterNavigator> {
           item('如何打开第三方应用', LaunchPage(), 'launch'),
           item('Flutter页面生命周期', WidgetLifecycle(), 'widgetLifecycle'),
           item('Flutter应用生命周期', AppLifecycle(), 'appLifecycle'),
+          item('【实战尝鲜】拍照APP开发', PhotoApp(), 'photo'),
         ],
       ),
     );

@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_color_plugin: ^0.0.2
   url_launcher: ^6.0.6
+  image_picker: ^0.8.0+3
 
 dev_dependencies:
   flutter_test:
